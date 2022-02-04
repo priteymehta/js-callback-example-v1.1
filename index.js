@@ -1,16 +1,19 @@
 let prepareTea = (_addTeaLeaf) => {
   console.log('adding water....');
-  console.log(`water is boiled now, you can add tealeaf ...`);
   setTimeout(() => {
     console.log(`water is boiled now, you can add tealeaf ...`);
-    // add milk now
+    // add tea leaves now
     _addTeaLeaf(addMilk);
   }, 5000);
 };
 
 let addTeaLeaf = (_addMilk) => {
   console.log('adding tea leaves....');
-  _addMilk(addMilk);
+  setTimeout(() => {
+    console.log(`water is boiled now, you can add tealeaf ...`);
+    // add milk now
+    _addMilk();
+  }, 5000);
 };
 
 let addMilk = () => {
