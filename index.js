@@ -1,18 +1,20 @@
-// Import stylesheets
-import './style.css';
+let prepareTea = (_addTeaLeaf) => {
+  console.log('adding water....');
+  console.log(`water is boiled now, you can add tealeaf ...`);
+  setTimeout(() => {
+    console.log(`water is boiled now, you can add tealeaf ...`);
+    // add milk now
+    _addTeaLeaf(addMilk);
+  }, 5000);
+};
 
-// Write Javascript code!
-const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>JS Starter</h1>`;
+let addTeaLeaf = (_addMilk) => {
+  console.log('adding tea leaves....');
+  _addMilk(addMilk);
+};
 
-async function getValue() {
-  console.log('inside function');
-  return 5;
-}
+let addMilk = () => {
+  console.log('adding milk....');
+};
 
-console.log('before calling function');
-var a = getValue().then((data) => {
-  console.log(data);
-});
-console.log('after calling function');
-console.log(a);
+prepareTea(addTeaLeaf);
